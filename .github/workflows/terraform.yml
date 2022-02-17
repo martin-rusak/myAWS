@@ -25,8 +25,9 @@ jobs:
         id: init
         run: terraform init
       
-       - name: Terraform Plan
+      - name: Terraform Plan
         id: plan
         run: terraform plan
+        
         run: echo ${{ steps.plan.outputs.stdout }}
         
