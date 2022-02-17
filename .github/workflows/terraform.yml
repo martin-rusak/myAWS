@@ -28,5 +28,6 @@ jobs:
         id: plan
         run: terraform plan
         
+      - name: Terraform Plan Status
         run: echo ${{ steps.plan.outputs.stdout }}
         
