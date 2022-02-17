@@ -38,7 +38,7 @@ resource "aws_autoscaling_group" "webapp_asg" {
     create_before_destroy = true
   }
 
-  vpc_zone_identifier  = var.public_subnets
+  vpc_zone_identifier  = module.vpc.public_subnets
   name                 = "webapp_asg"
   max_size             = var.asg_max
   min_size             = var.asg_min

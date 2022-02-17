@@ -28,9 +28,8 @@ module "vpc" {
 
 # AWS Elastic Load Balancer
 resource "aws_elb" "webapp-elb" {
-  name               = "webapp-elb"
-  subnets            = var.public_subnets
-  availability_zones = slice(data.aws_availability_zones.available.names, 0, var.subnet_count)
+  name    = "webapp-elb"
+  subnets = module.vpc.public_subnets
 
   listener {
     instance_port     = 80

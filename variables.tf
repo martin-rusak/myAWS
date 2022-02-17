@@ -70,5 +70,5 @@ variable "asg_min" {
 
 # My Key Name
 variable "key_name" {
-  default = "my-ssh-key"
+  default = "myKey"
 }
