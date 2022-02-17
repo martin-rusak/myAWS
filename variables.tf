@@ -37,6 +37,7 @@ variable "public_subnets" {
   default     = ["10.0.0.0/24", "10.0.2.0/24"]
 }
 
+# Resources Tags
 variable "tags" {
   description = "Tags to apply to resources"
   type        = map(string)
@@ -44,4 +45,30 @@ variable "tags" {
     Terraform   = "true"
     Environment = "POC"
   }
+}
+
+# E2 Instance Type
+variable "e2Type" {
+  description = "My E2 default isntance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+# E2 ASG Max
+variable "asg_max" {
+  description = "My E2 ASG Max"
+  type        = number
+  default     = 4
+}
+
+# E2 ASG Min
+variable "asg_min" {
+  description = "My E2 ASG Min"
+  type        = number
+  default     = 2
+}
+
+# My Key Name
+variable "key_name" {
+  default = "my-ssh-key"
 }
